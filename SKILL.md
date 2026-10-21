@@ -2,7 +2,7 @@
 name: rank-math-post-seo
 description: Research, draft, optimize, and audit WordPress blog posts for Rank Math SEO. Use when creating or revising posts, selecting a focus keyword, preparing an SEO title/meta description/slug, improving headings, images, links, readability, or checking Rank Math recommendations without sacrificing helpfulness or natural writing.
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   language: "en"
 ---
 
@@ -10,7 +10,7 @@ metadata:
 
 ## Purpose
 
-Create useful, well-researched, search-intent-matched WordPress posts and prepare the post-level fields used by Rank Math SEO. Optimize for readers first; use Rank Math as a diagnostic checklist, not as a ranking guarantee. Follow the rules in `references/seo-rules-and-sources.md` when a recommendation appears to conflict with user value or search-engine guidance.
+Create useful, well-researched, search-intent-matched WordPress posts and prepare the post-level fields used by Rank Math SEO. Optimize for readers first; use Rank Math as a diagnostic checklist, not as a ranking guarantee. **This SKILL.md is the complete, self-contained instruction file and must not require any separate local reference file to operate.** The SEO decision rules and official documentation links included below provide the context needed when plugin recommendations conflict with reader value or search-engine guidance.
 
 ## Non-negotiable principles
 
@@ -154,10 +154,54 @@ Check the article in this order:
 **Optional Rank Math enhancements**
 - Rough 1–1.5% keyword-density check if helpful, never a quota.
 - Short URL, TOC for longer posts, useful media, relevant external followed link where appropriate.
-- Sentiment word, power word, or title number only if the title benefits from it.
+- Apply the default sentiment-word and meaningful-number checks for the SEO Title as described in Section 8. Use power words selectively, only when they are accurate and improve clarity.
 - Content AI feedback only when available and relevant.
 
 Do not delay an otherwise excellent article to chase 100/100. Report which warnings were intentionally not followed and why, if any remain.
+
+## Self-contained SEO principles and official source notes
+
+The rules in this section are part of this file's operational instructions. They are included here so the Skill remains usable when only this SKILL.md is installed or supplied.
+
+### Focus Keyword and scoring
+
+- Rank Math's Focus Keyword is an editor-side analysis aid. Rank Math uses it to analyze the post; it is not sent to Google as a ranking instruction. Use it to keep the article focused, not as a claimed direct ranking signal.
+- Rank Math's SEO score and Content AI score are different. The SEO score checks on-page basics such as metadata, keyword placement, links, and readability. Content AI provides suggestions based on the target keyword and available search-result data. Neither score guarantees indexing, rankings, or traffic.
+- Official sources: [Rank Math General Tab](https://rankmath.com/kb/general-tab/) and [Rank Math SEO Score vs. Content AI Score](https://rankmath.com/kb/seo-score-vs-content-ai-score/).
+
+### Content length and keyword density
+
+- Rank Math's generic content-length test commonly uses 600 words as a baseline. This is a plugin check, not a Google minimum. Google states that content length alone does not determine ranking and there is no universal ideal word count. Write as much as the search intent requires; do not pad.
+- Rank Math documents 1–1.5% as a general keyword-density recommendation, but there is no universally correct density. Treat it only as a rough diagnostic and never as a quota. Prefer natural variants, clarity, and complete answers over repetition.
+- Official sources: [Rank Math's Ideal Blog Post Length](https://rankmath.com/kb/ideal-blog-post-length/), [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide), and [Rank Math SEO Score vs. Content AI Score](https://rankmath.com/kb/seo-score-vs-content-ai-score/).
+
+### SEO titles and search snippets
+
+- The default SEO Title workflow deliberately checks for a Rank Math-recognized sentiment word and a meaningful number, while keeping the title truthful, readable, concise, and aligned with the actual article. These are plugin readability checks, not universal Google ranking factors.
+- Never invent a count, statistic, year, urgency, benefit, or claim just to make a title test pass. When a number describes a count, the article must contain that number of substantive items. If no truthful title can reasonably satisfy a check, mark it Review and explain why.
+- Google may truncate a title or generate a different title link from page signals. A manually written SEO title is not a guarantee that Google will show exactly that wording.
+- Official sources: [Rank Math SEO Score vs. Content AI Score](https://rankmath.com/kb/seo-score-vs-content-ai-score/) and [Google's Title Links Guidance](https://developers.google.com/search/docs/appearance/title-link).
+
+### Meta descriptions and excerpts
+
+- Write a unique, accurate, useful meta description specific to the page. Include the primary keyword naturally when appropriate.
+- Search engines may use the meta description as a search snippet or generate a snippet from page content. The description does not fully control what appears in search results.
+- Use the `%excerpt%` variable only when the WordPress excerpt has deliberately been written and is suitable for the snippet; do not assume an auto-generated excerpt is optimized.
+- Official sources: [Rank Math Title and Description Variables](https://rankmath.com/kb/variables-in-seo-title-description/) and [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide).
+
+### Links, image alt text, and TOC
+
+- Add external links when they substantiate a claim or help the reader. Do not force an irrelevant followed external link solely to pass a plugin test. Use `rel="sponsored"` or `nofollow` for paid links as appropriate, and `ugc`/`nofollow` for untrusted user-generated content. Do not blanket-mark all normal editorial links as nofollow.
+- Image alt text must describe the meaningful visual content and its relationship to the page. Include a keyword only when it accurately describes the image; do not repeat the same keyword-only alt text across multiple images. Decorative images may use empty alt text when implemented as decorative.
+- A Table of Contents is a conditional usability feature. When useful, generate it from actual WordPress/Elementor H1/H2/H3 heading blocks using the site's TOC block or widget. Never hand-write a duplicate heading list in the article body. If the widget/editor is unavailable, provide an implementation note and do not claim it has been inserted.
+- Add images or videos when they genuinely explain the subject; do not force media counts to satisfy a plugin test.
+- Official sources: [Rank Math Link and SEO Score Guidance](https://rankmath.com/kb/seo-score-vs-content-ai-score/), [Google Crawlable Links Guidance](https://developers.google.com/search/docs/crawling-indexing/links-crawlable), [Rank Math Image Search Guidance](https://rankmath.com/kb/how-to-show-images-in-search-results/), [Rank Math Table of Contents](https://rankmath.com/kb/table-of-contents/), and [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide).
+
+### Interpreting plugin checks
+
+- Resolve Rank Math warnings when doing so improves clarity, relevance, usability, or metadata quality.
+- When a check is a heuristic and a change would introduce filler, keyword stuffing, an inaccurate title, irrelevant links, or unnecessary media, preserve the better editorial choice and mark the warning Review with a short reason.
+- Do not chase 100/100 as a substitute for accuracy, usefulness, or search performance. Community discussions can offer anecdotal context but do not override official documentation.
 
 ## Output contract
 
