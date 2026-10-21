@@ -2,7 +2,7 @@
 name: rank-math-post-seo
 description: Research, draft, optimize, and audit WordPress blog posts for Rank Math SEO. Use when creating or revising posts, selecting a focus keyword, preparing an SEO title/meta description/slug, improving headings, images, links, readability, or checking Rank Math recommendations without sacrificing helpfulness or natural writing.
 metadata:
-  version: "1.2.2"
+  version: "1.2.3"
   language: "en"
 ---
 
@@ -180,14 +180,14 @@ The rules in this section are part of this file's operational instructions. They
 - The default SEO Title workflow deliberately checks for a Rank Math-recognized sentiment word and a meaningful number, while keeping the title truthful, readable, concise, and aligned with the actual article. These are plugin readability checks, not universal Google ranking factors.
 - Never invent a count, statistic, year, urgency, benefit, or claim just to make a title test pass. When a number describes a count, the article must contain that number of substantive items. If no truthful title can reasonably satisfy a check, mark it Review and explain why.
 - Google may truncate a title or generate a different title link from page signals. A manually written SEO title is not a guarantee that Google will show exactly that wording.
-- Official sources: [Rank Math SEO Score vs. Content AI Score](https://rankmath.com/kb/seo-score-vs-content-ai-score/) and [Google's Title Links Guidance](https://developers.google.com/search/docs/appearance/title-link).
+- Official sources: [Rank Math's Ideal Meta Title Length](https://rankmath.com/kb/ideal-meta-title-length/), [Rank Math General Tab](https://rankmath.com/kb/general-tab/), [Rank Math SEO Score vs. Content AI Score](https://rankmath.com/kb/seo-score-vs-content-ai-score/), and [Google's Title Links Guidance](https://developers.google.com/search/docs/appearance/title-link).
 
 ### Meta descriptions and excerpts
 
 - Write a unique, accurate, useful meta description specific to the page. Include the primary keyword naturally when appropriate.
 - Search engines may use the meta description as a search snippet or generate a snippet from page content. The description does not fully control what appears in search results.
 - Use the `%excerpt%` variable only when the WordPress excerpt has deliberately been written and is suitable for the snippet; do not assume an auto-generated excerpt is optimized.
-- Official sources: [Rank Math Title and Description Variables](https://rankmath.com/kb/variables-in-seo-title-description/) and [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide).
+- Official sources: [Rank Math's Ideal Meta Description Length](https://rankmath.com/kb/ideal-meta-description-length/), [Rank Math Title and Description Variables](https://rankmath.com/kb/variables-in-seo-title-description/), and [Google's Snippet Guidance](https://developers.google.com/search/docs/appearance/snippet).
 
 ### Links, image alt text, and TOC
 
