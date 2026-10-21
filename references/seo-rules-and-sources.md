@@ -61,6 +61,17 @@ Sources:
 - https://rankmath.com/kb/table-of-contents/
 - https://rankmath.com/kb/seo-score-vs-content-ai-score/
 
+### Preview Snippet Editor length targets are not Google hard limits
+
+Rank Math’s guidance recommends an SEO title around 50–60 characters and uses a desktop pixel-width preview (about 580 px) to estimate display width. Its meta-description guidance recommends about 50–160 characters and a desktop pixel reference around 920 px. Rank Math’s URL-length test passes at 75 characters or fewer for the **full URL**, not just the slug. Treat these as Rank Math/editor and display heuristics, not universal search-engine limits. Google says title elements have no fixed character limit and title links are truncated as needed for device width; Google also says there is no fixed character limit for meta descriptions and may create snippets from page content. When templates contain variables, evaluate the final rendered title, including the site name and separator.
+
+Sources:
+- https://rankmath.com/kb/ideal-meta-title-length/
+- https://rankmath.com/kb/ideal-meta-description-length/
+- https://rankmath.com/kb/score-100-in-tests/
+- https://developers.google.com/search/docs/appearance/title-link
+- https://developers.google.com/search/docs/appearance/snippet
+
 ## Community perspective (anecdotal, not authoritative)
 
 A discussion in r/SEO about whether a Rank Math score must be satisfied includes several users noting that keyword checks can miss natural variations and that the score should be treated as a reference rather than followed blindly. This aligns with the official guidance above, but Reddit comments represent individual experiences, not empirical proof or official policy.
