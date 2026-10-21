@@ -2,7 +2,7 @@
 name: rank-math-post-seo
 description: Research, draft, optimize, and audit WordPress blog posts for Rank Math SEO. Use when creating or revising posts, selecting a focus keyword, preparing an SEO title/meta description/slug, improving headings, images, links, readability, or checking Rank Math recommendations without sacrificing helpfulness or natural writing.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   language: "en"
 ---
 
@@ -28,7 +28,8 @@ Use the details the user supplies: topic/draft, intended audience, target market
 - If a focus keyword is supplied, preserve its intended meaning and validate that it matches the post's search intent.
 - If none is supplied, research/select one primary query and a small set of supporting terms; state any material assumptions. Do not stop for clarification unless an essential ambiguity makes the result unreliable.
 - If no word count is supplied, choose a length that answers the query completely. For a typical informational post, use **600 words as a Rank Math-oriented baseline only**, not as a Google requirement; many topics need less or more. If the user specifically asks for 600–2,500 words, stay within that range unless doing so would make the result misleading or padded.
-- Keep the article language consistent with the requested audience and site. Do not switch languages mid-article.
+- **Default language: English.** Unless the user explicitly requests another language, write all publishable blog content entirely in English, including the post title, H1/H2/H3 headings, article body, SEO title, meta description, slug, focus keyword, excerpt, FAQ, image alt text, captions, and link anchor text.
+- Keep the article language consistent throughout. Do not mix Chinese or other languages into publishable content unless explicitly requested. Operational explanations outside the article may use the user's preferred language.
 
 ## Workflow
 
@@ -45,7 +46,7 @@ Use the details the user supplies: topic/draft, intended audience, target market
 1. Produce one clear working title/H1 and an outline that satisfies the intent without repetitive sections.
 2. Use a logical heading hierarchy: one main H1 in the post template; H2s for major sections; H3s for nested points. Do not select heading levels merely to change font size.
 3. Put a concise, direct answer or useful framing near the beginning. Include the primary focus keyword in the opening when it reads naturally.
-4. For long articles with roughly three or more meaningful sections, include a table of contents or recommend one. Do not force a TOC into a short post that does not need it.
+4. For long articles with roughly three or more meaningful sections, recommend an automatically generated Table of Contents when it improves navigation. **Do not hand-write a TOC list inside the article draft.** Structure the actual content with correctly nested H1/H2/H3 headings so a WordPress/Elementor TOC block or widget can generate the entries from those headings. If the component has not been inserted or inspected, provide a separate implementation note and do not claim the TOC is live.
 5. Add FAQs only when they address real reader questions and contribute useful content; do not add filler questions just to target extra phrases.
 
 ### 3. Write and edit the article
@@ -64,7 +65,7 @@ Always provide the following fields in a clearly labeled block when drafting a p
 | Rank Math / WordPress field | Rule |
 |---|---|
 | **Post Title / H1** | Clear, unique, truthful, and useful. It should match the page's actual content and search intent. |
-| **SEO Title** | Default site-wide template may be `%title% %sep% %sitename%`. For a specific post, supply a custom title when it better matches the query or improves clarity. Place the primary keyword near the beginning if natural; keep the wording concise and avoid repeating the same phrase. |
+| **SEO Title** | Default site-wide template may be `%title% %sep% %sitename%`. For a specific post, supply a custom title when it better matches the query or improves clarity. Place the primary keyword near the beginning if natural; keep the wording concise and avoid repeating the same phrase. By default, deliberately optimize the SEO Title for Rank Math's sentiment-word and number checks: include a relevant positive or negative sentiment word recognized by Rank Math and a meaningful number when this can be done accurately and naturally. Keep the title concise and aligned with actual article content. Never invent counts, statistics, dates, urgency, or exaggerated claims merely to make a test pass; if a truthful title cannot reasonably satisfy a check, mark it `Review` and explain why. |
 | **Permalink / Slug** | Provide a short, descriptive slug in lowercase with hyphens, ideally containing the primary keyword naturally. Rank Math uses 75 characters or fewer as its URL-length pass threshold; this is a plugin heuristic, not a ranking law. If the post is already published, do not change its URL casually: arrange a redirect and update internal links where necessary. |
 | **Meta Description** | Prefer a manually written, unique 1–2 sentence summary that accurately describes the post and its value. Include the primary keyword naturally if useful. `%excerpt%` is acceptable only when the WordPress excerpt is deliberately written and suitable as a search snippet; do not assume an auto-generated excerpt is optimized. Search engines may generate a different snippet. |
 | **Focus Keyword** | Set one primary focus keyword/phrase that best represents the page. Add secondary focus keywords only when they represent meaningful supporting queries and are supported by the content. Rank Math uses these internally for its analysis; they are not submitted to Google as a ranking instruction. |
@@ -108,20 +109,22 @@ Use this as a prioritized checklist, not a command to insert exact-match keyword
 - Use original/high-quality media when possible and place it near related text. Consider licensing, privacy, and attribution.
 - Rank Math may reward media quantity (its documentation describes four images/videos for the full media test in some configurations), but **do not force four media items into every post**. The appropriate number depends on topic, layout, and reader needs.
 
-### 8. Title readability: apply selectively
+### 8. Title readability: default checks for SEO Title
 
-Rank Math may flag the absence of a sentiment word, power word, or number. Resolve a flag only when the addition is accurate and useful:
+By default, build the SEO Title so it addresses Rank Math's sentiment-word and number checks while staying truthful, relevant, and readable. These are plugin readability checks, not universal Google ranking factors.
 
-- **Keyword near the beginning:** preferred if natural; do not make the title ungrammatical.
-- **Sentiment word:** use a positive/negative sentiment only where it conveys the actual article stance or outcome. Avoid fake urgency, fear, and exaggerated promises.
-- **Power word:** use a concrete descriptor (for example, “practical”, “complete”, “essential”) only when the article supports it; avoid hype.
-- **Number:** use numbers for genuinely numbered guides, comparisons, or data—not as decoration. Never invent a count or list structure solely to pass the test.
+- **Sentiment word:** Include a positive or negative sentiment word that Rank Math recognizes and that genuinely fits the article's content. Consult the current official Rank Math guidance or editor feedback when unsure; do not assume any adjective will pass.
+- **Number:** Include a meaningful number that is supported by the article, such as the actual count of methods, steps, mistakes, comparisons, or a relevant verified year. If the title promises a specific count, the body must contain that number of substantive items.
+- **Primary keyword:** Place it near the beginning when natural, without making the title awkward or repetitive.
+- **Accuracy:** Avoid fake urgency, fear, exaggerated promises, arbitrary numbers, or unsupported statistics.
+- **Post Title/H1:** It may match the SEO Title when that reads well. Do not distort the reader-facing H1 just to force a plugin indicator; prioritize the actual Rank Math SEO Title check and keep both titles consistent with the page.
+- **Verification:** Before delivery, state which sentiment word and number were used in the SEO Title. If the actual Rank Math editor is unavailable, report a content-level assessment rather than claiming the live test passed. If a truthful title cannot reasonably satisfy a check, mark it `Review` and explain why.
 
-The title must remain accurate, distinctive, and concise. Google may truncate a long title and may generate a different title link from other page signals.
+The SEO Title must remain accurate, distinctive, and concise. Google may truncate it or generate a different title link from other page signals.
 
 ### 9. Readability and Content AI
 
-- Use a TOC for long, section-heavy posts when it helps navigation.
+- Use an automatically generated TOC for long, section-heavy posts when it helps navigation. Generate entries from the actual WordPress/Elementor H1/H2/H3 heading blocks or configured TOC widget; do not include a hand-written duplicate list of headings in the article draft. If no site editor is available, provide a separate implementation note instead of claiming the widget has been added.
 - Keep paragraphs focused and easy to scan. Use lists and tables when they clarify, not as formatting filler.
 - Include helpful media where it adds value; the text must remain useful without decorative additions.
 - Content AI is optional. When available, use its keyword, outline, heading, link, and media suggestions as research prompts. Accept only suggestions that fit user intent and the verified facts. Review generated changes before applying them; do not claim that Content AI was used unless it actually was.
@@ -136,7 +139,10 @@ Check the article in this order:
 - Are facts, dates, names, claims, links, and quotations verified or properly qualified?
 - Is the content original/useful, with no fabricated experience or filler?
 - Are SEO title, meta description, slug, and focus keyword supplied?
+- Is the SEO Title assessed for a Rank Math-recognized sentiment word and a meaningful number? Record the word and number; do not claim a live pass unless the editor was inspected.
 - Is the title a fair description of the page?
+- Is all publishable article content and publishable SEO metadata in English by default, unless the user explicitly requested another language?
+- For long, section-heavy articles, is the TOC intended to be generated automatically from actual headings rather than manually typed into the article?
 
 **Important**
 - Keyword placement is natural in the title, opening, body, and a heading where relevant.
@@ -159,10 +165,10 @@ For a new post, return these sections in this order:
 
 1. **SEO brief** — search intent, audience assumption, primary focus keyword, supporting terms, and any research caveat.
 2. **Rank Math fields** — Post Title/H1, SEO Title, Slug, Meta Description, Focus Keyword, and optional Excerpt. Copy-ready; no extra commentary inside the fields.
-3. **Article draft** — complete article with H2/H3 structure, cited sources as appropriate, and a TOC when useful.
+3. **Article draft** — complete article with properly nested H1/H2/H3 headings and cited sources as appropriate. Do not include a manually written TOC list in the article body; when a TOC is useful, add a separate implementation note for automatic generation from the actual headings.
 4. **Media plan** — each recommended image/video, placement, and alt text. If none is useful, explain briefly.
 5. **Link plan** — internal-link targets/anchors and external sources; clearly separate real verified URLs from suggested site pages.
-6. **Rank Math audit** — a compact checklist with statuses `Pass`, `Review`, or `Not applicable`. Do not claim a live plugin score unless the actual editor or score was inspected.
+6. **Rank Math audit** — a compact checklist with statuses `Pass`, `Review`, or `Not applicable`. Include the SEO Title's proposed sentiment word and meaningful number, the default English-language check, and the automatic-TOC implementation status where relevant. Do not claim a live plugin score or a live TOC insertion unless the actual editor/site was inspected.
 7. **Sources** — trusted source links used for research, where applicable.
 
 For a post audit/revision rather than a new draft, focus on the supplied content and list specific fixes first. Preserve working elements and do not rewrite the full post unless requested.
